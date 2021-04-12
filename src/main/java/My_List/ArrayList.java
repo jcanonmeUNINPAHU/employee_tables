@@ -5,18 +5,22 @@
  */
 package My_List;
 
+import Objects.Employee;
+
 /**
  *
  * @author User
  */
-public class My_ArrayLinkedList <T> implements Interface_List <T> {
+public class ArrayList <T> implements Interface_List <T>  {
     
     private int size;
     private T[] objects;
+   
+   
     
     private final int initialArray_Capacity = 2;
     
-    public My_ArrayLinkedList(){
+    public ArrayList(){
         
         size = 0;
         objects = (T[]) new Object[initialArray_Capacity];
@@ -27,7 +31,7 @@ public class My_ArrayLinkedList <T> implements Interface_List <T> {
     =====================*/
     
     @Override
-    public void Add_Item( T objectAdd){
+    public void Add( T objectAdd){
         
         if(size == objects.length){
             T[] newobjects = (T[]) new Object[objects.length * 2];
@@ -104,7 +108,7 @@ public class My_ArrayLinkedList <T> implements Interface_List <T> {
     }
      
      @Override
-     public void Add_Item( T obj, int index){
+     public void Add( T obj, int index){
          if(size == objects.length){
              T[] newobjects = (T[]) new Object[objects.length * 2];
              System.arraycopy(objects, 0, newobjects, 0, objects.length);
@@ -139,7 +143,21 @@ public class My_ArrayLinkedList <T> implements Interface_List <T> {
         }
         return resultados;
         }
+     
+    
+    
+     
+      public int[] Salary(T obj){
+          int [] resultados_salario = new int[size];
+          for(int i = 0; i < size; i++){
+             
+                  resultados_salario[i] = i;
+              }
+          return resultados_salario;
+          }
+      }
+
+     
          
-    }
     
  

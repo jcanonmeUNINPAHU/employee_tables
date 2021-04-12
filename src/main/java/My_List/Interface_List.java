@@ -15,8 +15,8 @@ public interface Interface_List <T>{
     boolean Is_Empty();
     
     //añadir objetos
-    void Add_Item(T obj);
-    void Add_Item(T obj, int index);
+    void Add(T obj);
+    void Add(T obj, int index);
     
     //obtener el tamaño
     int Get_Size();
@@ -31,4 +31,7 @@ public interface Interface_List <T>{
     //obtener indices
     int IndexOf(T obj);
     public int[] IndexesOf(T obj);
+    
+    //Obtener salario
+    //
 }
