@@ -31,7 +31,7 @@ public class ArrayList <T> implements Interface_List <T>  {
     =====================*/
     
     @Override
-    public void Add( T objectAdd){
+    public void add( T objectAdd){
         
         if(size == objects.length){
             T[] newobjects = (T[]) new Object[objects.length * 2];
@@ -108,7 +108,7 @@ public class ArrayList <T> implements Interface_List <T>  {
     }
      
      @Override
-     public void Add( T obj, int index){
+     public void add( T obj, int index){
          if(size == objects.length){
              T[] newobjects = (T[]) new Object[objects.length * 2];
              System.arraycopy(objects, 0, newobjects, 0, objects.length);

@@ -15,8 +15,8 @@ public interface Interface_List <T>{
     boolean Is_Empty();
     
     //añadir objetos
-    void Add(T obj);
-    void Add(T obj, int index);
+    void add(T obj);
+    void add(T obj, int index);
     
     //obtener el tamaño
     int Get_Size();
