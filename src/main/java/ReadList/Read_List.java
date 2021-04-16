@@ -31,7 +31,127 @@ public class Read_List {
         Consultaempleados.add(new Employee(1008, "MARTINEZ GOMEZ", "JENNY PAOLA", 3137294, 3, 5));
         Consultaempleados.add(new Employee(1009, "MEDINA ACUNA", "MANUELA JULIETH", 4407138, 5, 3));
         
+        
+        ArrayList<Cities> ConsultaCiudad = new ArrayList<>();
+        
+        ConsultaCiudad.add(new Cities (1, "BOGOTA"));
+        ConsultaCiudad.add(new Cities (2, "MEDELLIN"));
+        ConsultaCiudad.add(new Cities (3, "CALI"));
+        ConsultaCiudad.add(new Cities (4, "CARTAGENA"));
+        ConsultaCiudad.add(new Cities (5, "PASTO"));
+        
+        ArrayList<Education>ConsultaEducacion = new ArrayList<>();
+        
+        ConsultaEducacion.add(new Education (1,"TECNICO"));
+        ConsultaEducacion.add(new Education (2,"TECNOLOGO"));
+        ConsultaEducacion.add(new Education (3,"PROFESIONAL"));
+        ConsultaEducacion.add(new Education (4,"ESPECIALISTA"));
+        ConsultaEducacion.add(new Education (5,"MAGISTER"));
+        ConsultaEducacion.add(new Education (6,"DOCTOR"));
+        
         System.out.println("PROGRAM developed by : JEFERSON CAÑON AND CATHERINE CAPERA " ); 
+        System.out.println(" ");
+        System.out.println("WHICH OPTION DO YOU WANT TO CONSULT?");
+        System.out.println(" ");
+        System.out.println("1. CITY");
+        System.out.println(" ");
+        System.out.println("2. EDUCATION");
+        System.out.println(" ");
+        System.out.println("3. SALARY");
+       
+        Scanner CondicionesSeleccionada = new Scanner(System.in);
+        int condicion1 = CondicionesSeleccionada.nextInt();
+        
+        if(condicion1 == 1){
+            System.out.println("cuidad por la cual quieres filtrar");
+            Scanner CondicionesSeleccionada1 = new Scanner(System.in);
+            String condicion11 = CondicionesSeleccionada.nextLine();
+             
+            for(Cities c : ConsultaCiudad){
+            if(condicion11 == "BOGOTA"){
+
+                if(c.Get_City() == condicion11){
+                    System.out.println("los empleados que cumplen con el menor son : " + c.ImprimirCiudad());
+                }
+            }
+             if(condicion11 == "MEDELLIN"){
+               
+              
+                if(c.Get_City() == condicion11){
+                    System.out.println("los empleados que cumplen son : " + c.ImprimirCiudad());
+                }
+            }
+             
+             if(condicion11 == "CARTAGENA"){
+
+                if(c.Get_City() == condicion11){
+                    System.out.println("los empleados que cumplen  son : " + c.ImprimirCiudad());
+                }
+            }
+             if(condicion11 == "PASTO"){
+               
+              
+                if(c.Get_City() == condicion11){
+                    System.out.println("los empleados que cumplen con son : " + c.ImprimirCiudad());
+                }
+            }      
+          }
+        }
+            
+            if(condicion1 == 1){
+            System.out.println("educacion por la cual quieres filtrar");
+            Scanner CondicionesSeleccionada11 = new Scanner(System.in);
+            String condicion111 = CondicionesSeleccionada11.nextLine();
+             
+            for(Education n : ConsultaEducacion){
+            if(condicion111 == "TECNICO"){
+
+                if(n.Get_Range() == condicion111){
+                    System.out.println("los empleados que cumplen con el menor son : " + n.ImprimirEducacion());
+                }
+            }
+             if(condicion111 == "TECNOLOGO"){
+               
+              
+                if(n.Get_Range() == condicion111){
+                    System.out.println("los empleados que cumplen son : " + n.ImprimirEducacion());
+                }
+            }
+             
+             if(condicion111 == "PROFESIONAL"){
+
+                if(n.Get_Range() == condicion111){
+                    System.out.println("los empleados que cumplen  son : " + n.ImprimirEducacion());
+                }
+            }
+             if(condicion111 == "ESPECIALISTA"){
+               
+              
+                if(n.Get_Range() == condicion111){
+                    System.out.println("los empleados que cumplen con son : " + n.ImprimirEducacion());
+                }
+            }
+            if(condicion111 == "MAGISTER"){
+
+                if(n.Get_Range() == condicion111){
+                    System.out.println("los empleados que cumplen  son : " + n.ImprimirEducacion());
+                }
+            }
+             if(condicion111 == "DOCTOR"){
+               
+              
+                if(n.Get_Range() == condicion111){
+                    System.out.println("los empleados que cumplen con son : " + n.ImprimirEducacion());
+                }
+            }
+        
+             
+        }
+            
+        }
+            
+        if(condicion1 == 3){
+               
         System.out.println("CHOOSE CONSULT TYPE TO EMPLOYEE SALARIES " );
         System.out.println("1. SALARY LESS THAN " );
         System.out.println("2. SALARY GREATER THAN " );
@@ -59,7 +179,6 @@ public class Read_List {
                     System.out.println("los empleados que cumplen con el mayor salario son : " + e.Imprimir());
                 }
             }
-        
              
         }
         
@@ -75,38 +194,7 @@ public class Read_List {
               }
            }
         }
-        /*int longitudaux = Consultaempleados.Get_Size();
-        int [] temp = new int [longitudaux];
-        int contadoraux =0;
-        
-        for(int i = 0; i <Consultaempleados.Get_Size(); i++){
-            temp [contadoraux] = i;
-            contadoraux ++;
-                    System.out.println(i);
-               /*if(){
-                   
-               }*/
-        
-        
-            
-            
-        /*
-        if(condicion == 1){
-            System.out.println("ENTER THE NUMBER SALARY");
-            Scanner menor = new Scanner(System.in);
-            int menorque = menor.nextInt();
-            
-            int aux = menorque;
-            
-            for(int  i = 0; i < menorque; i++){
-                aux = i;
-                System.out.println(Consultaempleados);
-            }   
-        }*/
- 
-        
-        
-    }
+      }
+    }     
+  } 
     
-    
-}

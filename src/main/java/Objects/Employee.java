@@ -43,6 +43,22 @@ public class Employee   {
         return salary;
     }
     
+    public int Get_Id(){
+        return Id;
+    }
+    public String Get_LastNames(){
+        return LastNames;
+    }
     
+    public String Get_Names(){
+        return Names;
+    }
     
+    public int Get_idCity(){
+        return idCity;
+    }
+    
+    public int Get_idEducation(){
+        return idEducation;
+    }
 }
