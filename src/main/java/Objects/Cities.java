@@ -10,26 +10,26 @@ package Objects;
  * @author User
  */
 public class Cities extends Employee{
-    public int Id;
+    public int Id_City;
     public String  NameCity;
     
     //Constructor
     public Cities( int ids, String LastNames_Employee, String NameEmployee, int salaryEmployee,
             int IdCity, int IdEducation,int id1, String city ){
         super(ids, LastNames_Employee, NameEmployee, salaryEmployee, IdCity, IdEducation);
-        this.Id=id1;
+        this.Id_City=id1;
         this.NameCity=city;
         
     }
     
     public String ImprimirCiudad(){
         String s1 = "ID: " + Id + " " + "Apellidos: " +LastNames+ " " + "Nombres: "+ Names + " " 
-                + "Salario: " + salary+ " " +  "IdEducacion: " +idEducation + "ID "+Id+" "+"Nombre Ciudad "+ NameCity;
+                + "Salario: " + salary+ " " +  "IdEducacion: " +idEducation + "ID "+Id_City+" "+"Nombre Ciudad "+ NameCity;
         
         return s1;
     }
     
-    public String Get_City(){
-        return NameCity;
+    public int Get_City(){
+        return Id_City;
     }
 }

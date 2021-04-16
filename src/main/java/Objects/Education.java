@@ -11,7 +11,7 @@ package Objects;
  */
 public class Education extends Employee{
     
-    public int Id;
+    public int Id_Education;
     public String  Range;
     
     //Constructor
@@ -21,19 +21,19 @@ public class Education extends Employee{
     public Education( int ids, String LastNames_Employee, String NameEmployee, int salaryEmployee,
             int IdCity, int IdEducation, int id2, String range){
         super(ids, LastNames_Employee, NameEmployee, salaryEmployee, IdCity, IdEducation);
-        this.Id=id2;
+        this.Id_Education=id2;
         this.Range=range;
         
     }
     
     public String ImprimirEducacion(){
         String s2 = "ID: " + Id + " " + "Apellidos: " +LastNames+ " " + "Nombres: "+ Names + " " 
-                + "Salario: " + salary+ " " + "IdCiudad: "+idCity+ " "+  "ID "+Id+" "+"Rango "+Range;
+                + "Salario: " + salary+ " " + "IdCiudad: "+idCity+ " "+  "ID "+Id_Education+" "+"Rango "+Range;
         
         return s2;
     }
     
-    public String Get_Range(){
-        return Range;
+    public int Get_Range(){
+        return Id_Education;
     }
 }
