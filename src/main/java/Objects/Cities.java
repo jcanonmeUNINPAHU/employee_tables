@@ -15,9 +15,9 @@ public class Cities extends Employee{
     
     //Constructor
     public Cities( int ids, String LastNames_Employee, String NameEmployee, int salaryEmployee,
-            int IdCity, int IdEducation,int id1, String city ){
+            int IdCity, int IdEducation,int id1, String city){
         super(ids, LastNames_Employee, NameEmployee, salaryEmployee, IdCity, IdEducation);
-        this.Id_City=id1;
+                this.Id_City=id1;
         this.NameCity=city;
         
     }

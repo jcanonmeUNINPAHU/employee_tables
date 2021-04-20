@@ -11,13 +11,11 @@ import Objects.Cities.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-
 /**
  *
  * @author User
  */
-public class Read_List {
-    
+public class Read_List2 {
     public static void main (String [ ] args){
         
         ArrayList<Employee> Consultaempleados = new ArrayList<>();
@@ -63,11 +61,14 @@ public class Read_List {
         System.out.println(" ");
         System.out.println("1. CITY AND EDUCATION");
         System.out.println(" ");
-        System.out.println("2. EDUCATION AND CITY AND SALARY");
+        System.out.println("2.  CITY AND SALARY");
         System.out.println(" ");
-       
+        System.out.println("3.  EDUCATION AND SALARY");
+        System.out.println(" ");
+        
         Scanner CondicionesSeleccionada = new Scanner(System.in);
         int condicion1 = CondicionesSeleccionada.nextInt();
+        
         
         if(condicion1 == 1){
             
@@ -105,96 +106,99 @@ public class Read_List {
                 
             Scanner CondicionesSeleccionada11 = new Scanner(System.in);
             int condicion111 = CondicionesSeleccionada11.nextInt();
-             System.out.println("==============================");
-          System.out.println("los que cumplen con la primera condicion: "); 
             
-            for(Cities c : ConsultaCiudad){
-                for(Education n : ConsultaEducacion)
-                 if(condicion11 == 1 && condicion111 == 1){
-                    System.out.println("NO SE ENCUENTRA NINGUN EMPLEADO RELACIONADO CON ESTA CUIDAD ");
+ 
+           /*for(Employee e :  Consultaempleados){
+              
+               if (condicion11 != e.Get_idCity()&& condicion111 != e.Get_idEducation()){
+                   System.out.println("no se encunetran ningun empleado  con esas caracterisitcas");
+                   System.out.println("================================");
+                   
+               }else if(condicion11 == e.Get_idCity()&& condicion111 == e.Get_idEducation()){
+                   System.out.println("LOS EMPLEADOS QUE CUMPLEN SON  : " + e.Imprimir());
+                    System.out.println("================================");
+               }
                     
-                    break;
-            }
-             if(condicion11 == 2){
-               
-              
-                if(c.Get_City() == condicion11){
+           }*/
+           
+            for(Cities c : ConsultaCiudad){
+                for(Education n : ConsultaEducacion){
+                    
+                    if(condicion11 == c.Get_City() && condicion111 == n.Get_Range()){
                     System.out.println("los empleados que cumplen son : " + c.ImprimirCiudad());
-                }
-            }
-             
-             if(condicion11 == 3){
-
-                if(c.Get_City() == condicion11){
-                    System.out.println("los empleados que cumplen  son : " + c.ImprimirCiudad());
-                }
-            }
-             if(condicion11 == 4){
-               
-              
-                if(c.Get_City() == condicion11){
-                    System.out.println("los empleados que cumplen con son : " + c.ImprimirCiudad());
-                }
-            }  
+                    System.out.println("================================");
+                      break;
+                    }
+                 }
+              }
+          }
+        
+         if(condicion1 == 2){
             
-              if(condicion11 == 5){
-               
-              
-                if(c.Get_City() == condicion11){
-                    System.out.println("los empleados que cumplen con son : " + c.ImprimirCiudad());
+            System.out.println(" ");
+            System.out.println("BOGOTA 1");
+            System.out.println(" ");
+            System.out.println("MEDELLIN 2");
+            System.out.println(" ");
+            System.out.println("CALI 3");
+            System.out.println(" ");
+            System.out.println("CARTAGENA 4");
+            System.out.println(" ");
+            System.out.println("PASTO 5");
+            System.out.println(" ");
+            System.out.println("Escriba el id de la cuidad por la cual quieres filtrar");
+            Scanner CondicionesSeleccionada11_Ciudad = new Scanner(System.in);
+            int condicion1111 = CondicionesSeleccionada11_Ciudad.nextInt();
+               System.out.println("==============================");
+             
+        System.out.println("CHOOSE CONSULT TYPE TO EMPLOYEE SALARIES " );
+        System.out.println("1. SALARY LESS THAN " );
+        System.out.println("2. SALARY GREATER THAN " );
+        System.out.println("3. SALARY BETWEEN A RANGE OF ");
+        Scanner primeraCondicion = new Scanner(System.in);
+        int condicion = primeraCondicion.nextInt();
+        
+        System.out.println("ENTER THE FIRST NUMBER SALARY");
+        Scanner salario = new Scanner(System.in);
+        int salario_empleado = salario.nextInt();
+        
+        if(condicion == 1){
+         for(Employee e : Consultaempleados){  
+                if( e.Get_Salary() < salario_empleado && condicion1111 == e.Get_idCity()){
+                    System.out.println("los empleados que cumplen  son : " + e.Imprimir());
+                     System.out.println("================================");     
+                }
+             } 
+         }
+        if(condicion == 2){
+         for(Employee e : Consultaempleados){  
+                if( e.Get_Salary() > salario_empleado && condicion1111 == e.Get_idCity()){
+                    System.out.println("los empleados que cumplen  son : " + e.Imprimir());
+                     System.out.println("================================");          
                 }
             } 
-             
-          }
+         }
+        
+        if(condicion == 3){
+            System.out.println("ENTER THE SECOND NUMBER SALARY");
+             Scanner salario2 = new Scanner(System.in);
+             int salario_empleado2 = salario2.nextInt();
              System.out.println("==============================");
-          System.out.println("los que cumplen con la segunda condicion: "); 
+          System.out.println("los que cumplen con la primera condicion: "); 
+             
+        for(Employee o : Consultaempleados){
             
-           for(Education n : ConsultaEducacion){
-            if(condicion111 == 1){
-
-                if(n.Get_Range() == condicion111){
-                    System.out.println("los empleados que cumplen con el menor son : " + n.ImprimirEducacion());
-                }
-            }
-             if(condicion111 == 2){
-               
-              
-                if(n.Get_Range() == condicion111){
-                    System.out.println("los empleados que cumplen son : " + n.ImprimirEducacion());
-                }
-            }
-             
-             if(condicion111 == 3){
-
-                if(n.Get_Range() == condicion111){
-                    System.out.println("los empleados que cumplen  son : " + n.ImprimirEducacion());
-                }
-            }
-             if(condicion111 == 4){
-               
-              
-                if(n.Get_Range() == condicion111){
-                    System.out.println("los empleados que cumplen con son : " + n.ImprimirEducacion());
-                }
-            }
-            if(condicion111 == 5){
-
-                if(n.Get_Range() == condicion111){
-                    System.out.println("los empleados que cumplen  son : " + n.ImprimirEducacion());
-                }
-            }
-             if(condicion111 == 6){
-               
-              System.out.println("NO SE ENCUNETRA NINGUN EMPLEADO CON ESE NIVEL DE EDUCACION");
-               
-            }
-             
+                if(o.Get_Salary() > salario_empleado && o.Get_Salary() < salario_empleado2 &&  condicion1111 == o.Get_idCity()){
+                System.out.println("los empleados que cumplen  son : " + o.Imprimir());
+              }
            }
-        }
             
-            if(condicion1 == 2){
-                
-                System.out.println(" ");
+        }
+      }
+         
+       if(condicion1 == 3){
+            
+           System.out.println(" ");
                 System.out.println("TECNICO 1");
                 System.out.println(" ");
                 System.out.println("TECNOLOGO 2");
@@ -212,23 +216,7 @@ public class Read_List {
                 
             Scanner CondicionesSeleccionada11 = new Scanner(System.in);
             int condicion111 = CondicionesSeleccionada11.nextInt();
-            
-             System.out.println(" ");
-            System.out.println("BOGOTA 1");
-            System.out.println(" ");
-            System.out.println("MEDELLIN 2");
-            System.out.println(" ");
-            System.out.println("CALI 3");
-            System.out.println(" ");
-            System.out.println("CARTAGENA 4");
-            System.out.println(" ");
-            System.out.println("PASTO 5");
-            System.out.println(" ");
-            System.out.println("Escriba el id de la cuidad por la cual quieres filtrar");
-            Scanner CondicionesSeleccionada1_Ciudad = new Scanner(System.in);
-            int condicion11 = CondicionesSeleccionada1_Ciudad.nextInt();
-               System.out.println("==============================");
-               
+             
         System.out.println("CHOOSE CONSULT TYPE TO EMPLOYEE SALARIES " );
         System.out.println("1. SALARY LESS THAN " );
         System.out.println("2. SALARY GREATER THAN " );
@@ -240,8 +228,24 @@ public class Read_List {
         Scanner salario = new Scanner(System.in);
         int salario_empleado = salario.nextInt();
         
-         
-          if(condicion == 3){
+        if(condicion == 1){
+         for(Employee e : Consultaempleados){  
+                if( e.Get_Salary() < salario_empleado && condicion111 == e.Get_idCity()){
+                    System.out.println("los empleados que cumplen  son : " + e.Imprimir());
+                     System.out.println("================================");     
+                }
+             } 
+         }
+        if(condicion == 2){
+         for(Employee e : Consultaempleados){  
+                if( e.Get_Salary() > salario_empleado && condicion111 == e.Get_idCity()){
+                    System.out.println("los empleados que cumplen  son : " + e.Imprimir());
+                     System.out.println("================================");          
+                }
+            } 
+         }
+        
+        if(condicion == 3){
             System.out.println("ENTER THE SECOND NUMBER SALARY");
              Scanner salario2 = new Scanner(System.in);
              int salario_empleado2 = salario2.nextInt();
@@ -250,114 +254,14 @@ public class Read_List {
              
         for(Employee o : Consultaempleados){
             
-                if(o.Get_Salary() > salario_empleado && o.Get_Salary() < salario_empleado2){
-             System.out.println("los empleados que cumplen con el rango solicitado de salario son : " + o.Imprimir());
+                if(o.Get_Salary() > salario_empleado && o.Get_Salary() < salario_empleado2 &&  condicion111 == o.Get_idCity()){
+                System.out.println("los empleados que cumplen  son : " + o.Imprimir());
               }
            }
             
         }
-          
-                for(Employee e : Consultaempleados){
-            if(condicion == 1){
+      }
+   }   
+ }
 
-                if(e.Get_Salary() < salario_empleado){
-                    System.out.println("los empleados que cumplen con el menor salario son : " + e.Imprimir());
-                }
-            }
-             if(condicion == 2){
-               
-              
-                if(e.Get_Salary() > salario_empleado){
-                    System.out.println("los empleados que cumplen con el mayor salario son : " + e.Imprimir());
-                }
-            }
-             
-          }    System.out.println("================================");
-               System.out.println("los que cumplen con la segunda  condicion son : ");
-            for(Education n : ConsultaEducacion){
-            if(condicion111 == 1){
-
-                if(n.Get_Range() == condicion111){
-                    System.out.println("los empleados que cumplen con el menor son : " + n.ImprimirEducacion());
-                }
-            }
-             if(condicion111 == 2){
-               
-              
-                if(n.Get_Range() == condicion111){
-                    System.out.println("los empleados que cumplen son : " + n.ImprimirEducacion());
-                }
-            }
-             
-             if(condicion111 == 3){
-
-                if(n.Get_Range() == condicion111){
-                    System.out.println("los empleados que cumplen  son : " + n.ImprimirEducacion());
-                }
-            }
-             if(condicion111 == 4){
-               
-              
-                if(n.Get_Range() == condicion111){
-                    System.out.println("los empleados que cumplen con son : " + n.ImprimirEducacion());
-                }
-            }
-            if(condicion111 == 5){
-
-                if(n.Get_Range() == condicion111){
-                    System.out.println("los empleados que cumplen  son : " + n.ImprimirEducacion());
-                }
-            }
-             if(condicion111 == 6){
-               
-              System.out.println("NO SE ENCUNETRA NINGUN EMPLEADO CON ESE NIVEL DE EDUCACION");
-               
-            }
-             
-           }  System.out.println("============================="); 
-                System.out.println("los que cumplen con la tercera condicion son : ");
-            
-           for(Cities c : ConsultaCiudad){
-            if(condicion11 == 1){
-                    System.out.println("NO SE ENCUENTRA NINGUN EMPLEADO RELACIONADO CON ESTA CUIDAD ");
-                    break;
-            }
-             if(condicion11 == 2){
-               
-              
-                if(c.Get_City() == condicion11){
-                    System.out.println("los empleados que cumplen son : " + c.ImprimirCiudad());
-                }
-            }
-             
-             if(condicion11 == 3){
-
-                if(c.Get_City() == condicion11){
-                    System.out.println("los empleados que cumplen  son : " + c.ImprimirCiudad());
-                }
-            }
-             if(condicion11 == 4){
-               
-              
-                if(c.Get_City() == condicion11){
-                    System.out.println("los empleados que cumplen con son : " + c.ImprimirCiudad());
-                }
-            }  
-            
-              if(condicion11 == 5){
-               
-                if(c.Get_City() == condicion11){
-                    System.out.println("los empleados que cumplen con son : " + c.ImprimirCiudad());
-                }
-             } 
-             
-           }
-          
-        System.out.println("==============================");
-        System.out.println("PROFE FUNCIONO CORRECTAMENTE");
-        System.out.println("PONGANOS 5 PLEASE JEJEJEJEJEJE");
-          }
-         }
-    }
-
-    
+  
